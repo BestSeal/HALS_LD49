@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Stage2
   m_EditorClassIdentifier: 
   criticalWeightUntilProceedToNextStage: 30
-  stageRotation: 30
+  stageRotation: 10
