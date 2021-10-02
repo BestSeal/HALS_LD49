@@ -1,0 +1,111 @@
+
+skeleton.png
+size: 1024,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Pic/Enemy_0000_Eues_2
+  rotate: false
+  xy: 41, 2
+  size: 25, 21
+  orig: 25, 21
+  offset: 0, 0
+  index: -1
+Pic/Enemy_0001_Eues_1
+  rotate: true
+  xy: 479, 14
+  size: 47, 35
+  orig: 47, 35
+  offset: 0, 0
+  index: -1
+Pic/Enemy_0002_Mouth
+  rotate: false
+  xy: 121, 3
+  size: 27, 10
+  orig: 27, 10
+  offset: 0, 0
+  index: -1
+Pic/Enemy_0002_Mouth_2
+  rotate: true
+  xy: 100, 3
+  size: 22, 19
+  orig: 22, 19
+  offset: 0, 0
+  index: -1
+Pic/Enemy_0003_Body_2
+  rotate: false
+  xy: 2, 25
+  size: 80, 101
+  orig: 80, 101
+  offset: 0, 0
+  index: -1
+Pic/Enemy_0004_Foot_1
+  rotate: false
+  xy: 68, 6
+  size: 30, 17
+  orig: 30, 17
+  offset: 0, 0
+  index: -1
+Pic/Enemy_0005_Foot_2
+  rotate: false
+  xy: 2, 4
+  size: 37, 19
+  orig: 37, 19
+  offset: 0, 0
+  index: -1
+Pic/MuzzleFlash_0000_005
+  rotate: true
+  xy: 400, 27
+  size: 99, 77
+  orig: 99, 77
+  offset: 0, 0
+  index: -1
+Pic/MuzzleFlash_0001_004
+  rotate: true
+  xy: 84, 27
+  size: 99, 77
+  orig: 99, 77
+  offset: 0, 0
+  index: -1
+Pic/MuzzleFlash_0002_003
+  rotate: true
+  xy: 163, 27
+  size: 99, 77
+  orig: 99, 77
+  offset: 0, 0
+  index: -1
+Pic/MuzzleFlash_0003_002
+  rotate: true
+  xy: 242, 27
+  size: 99, 77
+  orig: 99, 77
+  offset: 0, 0
+  index: -1
+Pic/MuzzleFlash_0004_001
+  rotate: true
+  xy: 321, 27
+  size: 99, 77
+  orig: 99, 77
+  offset: 0, 0
+  index: -1
+Pic/Trail
+  rotate: false
+  xy: 121, 15
+  size: 38, 10
+  orig: 38, 10
+  offset: 0, 0
+  index: -1
+Pic/TrailRing
+  rotate: false
+  xy: 479, 63
+  size: 41, 63
+  orig: 41, 63
+  offset: 0, 0
+  index: -1
+Pic/shadow
+  rotate: false
+  xy: 161, 13
+  size: 30, 12
+  orig: 30, 12
+  offset: 0, 0
+  index: -1

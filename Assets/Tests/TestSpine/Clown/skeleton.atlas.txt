@@ -1,0 +1,622 @@
+
+skeleton.png
+size: 2048,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+AEKh_0001_Layer-19
+  rotate: true
+  xy: 485, 4
+  size: 76, 86
+  orig: 76, 86
+  offset: 0, 0
+  index: -1
+AEKh_0002_Layer-18
+  rotate: true
+  xy: 573, 4
+  size: 76, 86
+  orig: 76, 86
+  offset: 0, 0
+  index: -1
+AEKh_0003_Layer-16
+  rotate: true
+  xy: 661, 5
+  size: 76, 86
+  orig: 76, 86
+  offset: 0, 0
+  index: -1
+AEKh_0004_Layer-15
+  rotate: false
+  xy: 760, 168
+  size: 76, 86
+  orig: 76, 86
+  offset: 0, 0
+  index: -1
+AEKh_0005_Layer-14
+  rotate: false
+  xy: 838, 168
+  size: 76, 86
+  orig: 76, 86
+  offset: 0, 0
+  index: -1
+AEKh_0006_Layer-13
+  rotate: false
+  xy: 916, 168
+  size: 76, 86
+  orig: 76, 86
+  offset: 0, 0
+  index: -1
+AEKh_0007_Layer-12
+  rotate: false
+  xy: 994, 168
+  size: 76, 86
+  orig: 76, 86
+  offset: 0, 0
+  index: -1
+AEKh_0008_Layer-11
+  rotate: true
+  xy: 1004, 90
+  size: 76, 86
+  orig: 76, 86
+  offset: 0, 0
+  index: -1
+AEKh_0009_Layer-10
+  rotate: false
+  xy: 1072, 168
+  size: 76, 86
+  orig: 76, 86
+  offset: 0, 0
+  index: -1
+AEKh_0010_Layer-8
+  rotate: false
+  xy: 1009, 2
+  size: 76, 86
+  orig: 76, 86
+  offset: 0, 0
+  index: -1
+AEKh_0011_Layer-7
+  rotate: false
+  xy: 1087, 2
+  size: 76, 86
+  orig: 76, 86
+  offset: 0, 0
+  index: -1
+AEKh_0012_Layer-6
+  rotate: true
+  xy: 1092, 90
+  size: 76, 86
+  orig: 76, 86
+  offset: 0, 0
+  index: -1
+AEKh_0013_Layer-5
+  rotate: false
+  xy: 1165, 2
+  size: 76, 86
+  orig: 76, 86
+  offset: 0, 0
+  index: -1
+AEKh_0014_Layer-4
+  rotate: false
+  xy: 1150, 168
+  size: 76, 86
+  orig: 76, 86
+  offset: 0, 0
+  index: -1
+Anger
+  rotate: true
+  xy: 177, 75
+  size: 67, 83
+  orig: 67, 83
+  offset: 0, 0
+  index: -1
+Breast
+  rotate: true
+  xy: 120, 73
+  size: 69, 55
+  orig: 69, 55
+  offset: 0, 0
+  index: -1
+Collar
+  rotate: false
+  xy: 598, 83
+  size: 92, 59
+  orig: 92, 59
+  offset: 0, 0
+  index: -1
+Ear
+  rotate: false
+  xy: 1337, 93
+  size: 18, 28
+  orig: 18, 28
+  offset: 0, 0
+  index: -1
+Eues_Close
+  rotate: true
+  xy: 1243, 2
+  size: 35, 13
+  orig: 35, 13
+  offset: 0, 0
+  index: -1
+Eues_Close_2
+  rotate: false
+  xy: 1180, 90
+  size: 37, 15
+  orig: 37, 15
+  offset: 0, 0
+  index: -1
+Foot_L
+  rotate: false
+  xy: 652, 150
+  size: 38, 14
+  orig: 38, 14
+  offset: 0, 0
+  index: -1
+Foot_R
+  rotate: true
+  xy: 1345, 146
+  size: 32, 16
+  orig: 32, 16
+  offset: 0, 0
+  index: -1
+Forearm_L
+  rotate: true
+  xy: 1313, 180
+  size: 34, 32
+  orig: 34, 32
+  offset: 0, 0
+  index: -1
+Forearm_R
+  rotate: false
+  xy: 1337, 5
+  size: 22, 41
+  orig: 22, 41
+  offset: 0, 0
+  index: -1
+GodRays
+  rotate: false
+  xy: 617, 166
+  size: 88, 88
+  orig: 88, 88
+  offset: 0, 0
+  index: -1
+H_00001
+  rotate: false
+  xy: 1346, 72
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+H_00002
+  rotate: false
+  xy: 1346, 51
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+H_00003
+  rotate: false
+  xy: 1357, 102
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+H_00004
+  rotate: false
+  xy: 1361, 30
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+Hair_1
+  rotate: false
+  xy: 1180, 107
+  size: 45, 59
+  orig: 45, 59
+  offset: 0, 0
+  index: -1
+Hair_2
+  rotate: true
+  xy: 636, 144
+  size: 20, 14
+  orig: 20, 14
+  offset: 0, 0
+  index: -1
+Hair_3
+  rotate: true
+  xy: 1219, 90
+  size: 15, 14
+  orig: 15, 14
+  offset: 0, 0
+  index: -1
+Hair_4
+  rotate: true
+  xy: 59, 71
+  size: 71, 59
+  orig: 71, 59
+  offset: 0, 0
+  index: -1
+Hair_5
+  rotate: true
+  xy: 1235, 91
+  size: 23, 19
+  orig: 23, 19
+  offset: 0, 0
+  index: -1
+HalfGodRays
+  rotate: false
+  xy: 707, 166
+  size: 51, 88
+  orig: 51, 88
+  offset: 0, 0
+  index: -1
+Half_Ring
+  rotate: false
+  xy: 327, 3
+  size: 77, 77
+  orig: 77, 77
+  offset: 0, 0
+  index: -1
+Head
+  rotate: true
+  xy: 157, 4
+  size: 67, 89
+  orig: 67, 89
+  offset: 0, 0
+  index: -1
+Hip_L
+  rotate: false
+  xy: 1296, 216
+  size: 31, 38
+  orig: 31, 38
+  offset: 0, 0
+  index: -1
+Hip_R
+  rotate: true
+  xy: 1258, 3
+  size: 34, 42
+  orig: 34, 42
+  offset: 0, 0
+  index: -1
+Knee_L
+  rotate: false
+  xy: 1347, 189
+  size: 25, 31
+  orig: 25, 31
+  offset: 0, 0
+  index: -1
+Knee_R
+  rotate: true
+  xy: 1329, 222
+  size: 32, 31
+  orig: 32, 31
+  offset: 0, 0
+  index: -1
+Knee_R_1
+  rotate: true
+  xy: 1361, 10
+  size: 18, 16
+  orig: 18, 16
+  offset: 0, 0
+  index: -1
+Knife
+  rotate: true
+  xy: 1228, 171
+  size: 83, 32
+  orig: 83, 32
+  offset: 0, 0
+  index: -1
+Scapula_L
+  rotate: false
+  xy: 1266, 42
+  size: 46, 47
+  orig: 46, 47
+  offset: 0, 0
+  index: -1
+Scapula_R
+  rotate: false
+  xy: 1261, 122
+  size: 46, 47
+  orig: 46, 47
+  offset: 0, 0
+  index: -1
+Shoulder_L
+  rotate: false
+  xy: 1302, 2
+  size: 33, 38
+  orig: 33, 38
+  offset: 0, 0
+  index: -1
+Shoulder_R
+  rotate: true
+  xy: 1314, 48
+  size: 41, 30
+  orig: 41, 30
+  offset: 0, 0
+  index: -1
+Skirt_1
+  rotate: true
+  xy: 1262, 214
+  size: 40, 32
+  orig: 40, 32
+  offset: 0, 0
+  index: -1
+Skirt_2
+  rotate: false
+  xy: 1309, 137
+  size: 34, 37
+  orig: 34, 37
+  offset: 0, 0
+  index: -1
+Skirt_back
+  rotate: true
+  xy: 1309, 122
+  size: 13, 23
+  orig: 13, 23
+  offset: 0, 0
+  index: -1
+Smile
+  rotate: true
+  xy: 248, 6
+  size: 67, 77
+  orig: 67, 77
+  offset: 0, 0
+  index: -1
+Spira_0000_013
+  rotate: false
+  xy: 555, 144
+  size: 60, 110
+  orig: 60, 110
+  offset: 0, 0
+  index: -1
+Spira_0001_012
+  rotate: true
+  xy: 45, 5
+  size: 60, 110
+  orig: 60, 110
+  offset: 0, 0
+  index: -1
+Spira_0002_011
+  rotate: false
+  xy: 59, 144
+  size: 60, 110
+  orig: 60, 110
+  offset: 0, 0
+  index: -1
+Spira_0003_010
+  rotate: false
+  xy: 121, 144
+  size: 60, 110
+  orig: 60, 110
+  offset: 0, 0
+  index: -1
+Spira_0004_009
+  rotate: false
+  xy: 183, 144
+  size: 60, 110
+  orig: 60, 110
+  offset: 0, 0
+  index: -1
+Spira_0005_008
+  rotate: false
+  xy: 245, 144
+  size: 60, 110
+  orig: 60, 110
+  offset: 0, 0
+  index: -1
+Spira_0006_007
+  rotate: true
+  xy: 262, 82
+  size: 60, 110
+  orig: 60, 110
+  offset: 0, 0
+  index: -1
+Spira_0007_006
+  rotate: false
+  xy: 307, 144
+  size: 60, 110
+  orig: 60, 110
+  offset: 0, 0
+  index: -1
+Spira_0008_005
+  rotate: false
+  xy: 369, 144
+  size: 60, 110
+  orig: 60, 110
+  offset: 0, 0
+  index: -1
+Spira_0009_004
+  rotate: true
+  xy: 374, 82
+  size: 60, 110
+  orig: 60, 110
+  offset: 0, 0
+  index: -1
+Spira_0010_003
+  rotate: false
+  xy: 431, 144
+  size: 60, 110
+  orig: 60, 110
+  offset: 0, 0
+  index: -1
+Spira_0011_002
+  rotate: true
+  xy: 486, 82
+  size: 60, 110
+  orig: 60, 110
+  offset: 0, 0
+  index: -1
+Spira_0012_001
+  rotate: false
+  xy: 493, 144
+  size: 60, 110
+  orig: 60, 110
+  offset: 0, 0
+  index: -1
+Stomach
+  rotate: true
+  xy: 1243, 39
+  size: 50, 21
+  orig: 50, 21
+  offset: 0, 0
+  index: -1
+Teleport_Ring_0000_012
+  rotate: false
+  xy: 957, 4
+  size: 50, 80
+  orig: 50, 80
+  offset: 0, 0
+  index: -1
+Teleport_Ring_0001_011
+  rotate: false
+  xy: 692, 84
+  size: 50, 80
+  orig: 50, 80
+  offset: 0, 0
+  index: -1
+Teleport_Ring_0002_010
+  rotate: false
+  xy: 744, 84
+  size: 50, 80
+  orig: 50, 80
+  offset: 0, 0
+  index: -1
+Teleport_Ring_0003_009
+  rotate: false
+  xy: 749, 2
+  size: 50, 80
+  orig: 50, 80
+  offset: 0, 0
+  index: -1
+Teleport_Ring_0004_008
+  rotate: false
+  xy: 796, 86
+  size: 50, 80
+  orig: 50, 80
+  offset: 0, 0
+  index: -1
+Teleport_Ring_0006_006
+  rotate: false
+  xy: 801, 4
+  size: 50, 80
+  orig: 50, 80
+  offset: 0, 0
+  index: -1
+Teleport_Ring_0007_005
+  rotate: false
+  xy: 848, 86
+  size: 50, 80
+  orig: 50, 80
+  offset: 0, 0
+  index: -1
+Teleport_Ring_0008_004
+  rotate: false
+  xy: 853, 4
+  size: 50, 80
+  orig: 50, 80
+  offset: 0, 0
+  index: -1
+Teleport_Ring_0009_003
+  rotate: false
+  xy: 900, 86
+  size: 50, 80
+  orig: 50, 80
+  offset: 0, 0
+  index: -1
+Teleport_Ring_0010_002
+  rotate: false
+  xy: 905, 4
+  size: 50, 80
+  orig: 50, 80
+  offset: 0, 0
+  index: -1
+Teleport_Ring_0011_001
+  rotate: false
+  xy: 952, 86
+  size: 50, 80
+  orig: 50, 80
+  offset: 0, 0
+  index: -1
+Toe_L
+  rotate: false
+  xy: 1256, 91
+  size: 19, 23
+  orig: 19, 23
+  offset: 0, 0
+  index: -1
+Toe_R
+  rotate: false
+  xy: 617, 144
+  size: 17, 20
+  orig: 17, 20
+  offset: 0, 0
+  index: -1
+Torso
+  rotate: true
+  xy: 1227, 116
+  size: 50, 32
+  orig: 50, 32
+  offset: 0, 0
+  index: -1
+Trail
+  rotate: true
+  xy: 1301, 176
+  size: 38, 10
+  orig: 38, 10
+  offset: 0, 0
+  index: -1
+TrailRing
+  rotate: false
+  xy: 2, 2
+  size: 41, 63
+  orig: 41, 63
+  offset: 0, 0
+  index: -1
+Weapon
+  rotate: true
+  xy: 1362, 228
+  size: 26, 14
+  orig: 26, 14
+  offset: 0, 0
+  index: -1
+Weapons
+  rotate: true
+  xy: 2, 67
+  size: 187, 55
+  orig: 187, 55
+  offset: 0, 0
+  index: -1
+Wris_R
+  rotate: false
+  xy: 1277, 91
+  size: 29, 29
+  orig: 29, 29
+  offset: 0, 0
+  index: -1
+Wrist_L1
+  rotate: false
+  xy: 1308, 91
+  size: 27, 29
+  orig: 27, 29
+  offset: 0, 0
+  index: -1
+Wrist_L2
+  rotate: true
+  xy: 1262, 173
+  size: 39, 37
+  orig: 39, 37
+  offset: 0, 0
+  index: -1
+fine-smoke-8
+  rotate: false
+  xy: 406, 3
+  size: 77, 77
+  orig: 77, 77
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 1334, 123
+  size: 30, 12
+  orig: 30, 12
+  offset: 0, 0
+  index: -1

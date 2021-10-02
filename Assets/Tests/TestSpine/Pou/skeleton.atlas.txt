@@ -1,0 +1,48 @@
+
+skeleton.png
+size: 256,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Pic/Foot_1
+  rotate: true
+  xy: 101, 5
+  size: 31, 17
+  orig: 31, 17
+  offset: 0, 0
+  index: -1
+Pic/Foot_2
+  rotate: false
+  xy: 62, 2
+  size: 37, 19
+  orig: 37, 19
+  offset: 0, 0
+  index: -1
+Pic/Untitled-1_0000_Mouth
+  rotate: false
+  xy: 2, 5
+  size: 58, 16
+  orig: 58, 16
+  offset: 0, 0
+  index: -1
+Pic/Untitled-1_0001_Eues_2
+  rotate: true
+  xy: 94, 38
+  size: 30, 19
+  orig: 30, 19
+  offset: 0, 0
+  index: -1
+Pic/Untitled-1_0002_Eues_1
+  rotate: true
+  xy: 94, 70
+  size: 47, 37
+  orig: 47, 37
+  offset: 0, 0
+  index: -1
+Pic/Untitled-1_0003_Body
+  rotate: false
+  xy: 2, 23
+  size: 90, 94
+  orig: 90, 94
+  offset: 0, 0
+  index: -1
