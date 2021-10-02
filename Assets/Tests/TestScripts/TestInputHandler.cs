@@ -1,3 +1,4 @@
+using System;
 using Spine.Unity;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,11 +9,16 @@ namespace Tests.TestScripts
     {
         [SerializeField] private InputAction moveInput;
         [SerializeField] private float moveSpeed = 3;
+        [SerializeField] private LayerMask enemyLayer;
         [SerializeField] private AnimationReferenceAsset moveAnimation;
         [SerializeField] private AnimationReferenceAsset idleAnimation;
+        [SerializeField] private AnimationReferenceAsset pushAnimation;
 
         private SkeletonAnimation _skeletonAnimation;
         private Vector3 _initScale;
+        
+        // enum better C:
+        private bool _isPushing;
 
         private void Awake()
         {
@@ -36,6 +42,7 @@ namespace Tests.TestScripts
             }
             else
             {
+                //_isMoving = false;
                 SetAnimation(idleAnimation);
             }
         }
@@ -43,14 +50,31 @@ namespace Tests.TestScripts
         // устанавливаем анимацию на ассет
         private void SetAnimation(AnimationReferenceAsset animationAsset, bool loop = true, float timeScale = 1f)
         {
-            // предотвращаем 
-            if (_skeletonAnimation.AnimationName == animationAsset.name)
+            // предотвращаем прерывание цикла
+            if (_skeletonAnimation.AnimationName == animationAsset.name || _isPushing)
             {
                 return;
             }
 
             var animationEntry = _skeletonAnimation.state.SetAnimation(0, animationAsset, loop);
             animationEntry.TimeScale = timeScale;
+        }
+
+        private void OnCollisionStay(Collision other)
+        {
+            if (UnityHelper.IsObjectInLayerMask(other.gameObject, enemyLayer))
+            {
+                SetAnimation(pushAnimation);
+                _isPushing = true;
+            }
+        }
+
+        private void OnCollisionExit(Collision other)
+        {
+            if (UnityHelper.IsObjectInLayerMask(other.gameObject, enemyLayer))
+            {
+                _isPushing = false;
+            }
         }
     }
 }

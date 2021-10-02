@@ -1,5 +1,7 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
+using DG.Tweening;
 using Tests;
 using Tests.TestPlatformSettings;
 using Tests.TestScripts;
@@ -10,7 +12,8 @@ public class PlatformRotator : MonoBehaviour
 {
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private List<PlatformStage> platformStages;
-    
+    [SerializeField] private float rotateDuration = 2;
+
     //!FOR TEST ONLY!
     [SerializeField] private TextMeshProUGUI currentWeight;
     [SerializeField] private TextMeshProUGUI currentStage;
@@ -22,10 +25,9 @@ public class PlatformRotator : MonoBehaviour
     private Collider _collider;
     private List<GameObject> _objectOnPlatform;
     private int _currentStageNumber = 0;
-    private float  _currentWeightLimit = 0;
+    private float _currentWeightLimit = 0;
+    private float enemiesCheckTimer;
 
-    private 
-    
     void Start()
     {
         _objectOnPlatform = new List<GameObject>();
@@ -37,26 +39,13 @@ public class PlatformRotator : MonoBehaviour
 
     private void Update()
     {
-        
+        enemiesCheckTimer += Time.deltaTime;
     }
 
     private void OnCollisionStay(Collision other)
     {
-        if (UnityHelper.IsObjectInLayerMask(other.gameObject, layerMask))
+        if (enemiesCheckTimer > rotateDuration)
         {
-            if (_collider.bounds.center.x > other.gameObject.transform.position.x)
-            {
-                ++_objectsOnRightSide;
-            }
-        }
-    }
-    
-    private void OnCollisionEnter(Collision other)
-    {
-        if (UnityHelper.IsObjectInLayerMask(other.gameObject, layerMask))
-        {
-            _objectOnPlatform.Add(other.gameObject);
-            _totalWeightOfObjects += other.gameObject.GetComponent<WeightInfo>()?.GetWeight ?? 0;
             if (_currentWeightLimit <= _totalWeightOfObjects)
             {
                 if (platformStages.Count - 1 > _currentStageNumber)
@@ -65,14 +54,36 @@ public class PlatformRotator : MonoBehaviour
                 }
 
                 _currentWeightLimit = GetStageWeightLimit(_currentStageNumber);
+                var rotationValue = -platformStages[_currentStageNumber].stageRotation;
+                StartCoroutine(RotateCoroutine(new Vector3(0, 0, rotationValue)));
             }
-            
+            else if (_currentStageNumber > 0 &&
+                     _totalWeightOfObjects < _currentWeightLimit -
+                     platformStages[_currentStageNumber].criticalWeightUntilProceedToNextStage)
+            {
+                var rotationValue = platformStages[_currentStageNumber].stageRotation;
+                StartCoroutine(RotateCoroutine(new Vector3(0, 0, rotationValue)));
+                --_currentStageNumber;
+                _currentWeightLimit = GetStageWeightLimit(_currentStageNumber);
+            }
+
+            enemiesCheckTimer = 0;
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (UnityHelper.IsObjectInLayerMask(other.gameObject, layerMask))
+        {
+            _objectOnPlatform.Add(other.gameObject);
+            _totalWeightOfObjects += other.gameObject.GetComponent<WeightInfo>()?.GetWeight ?? 0;
+
             UpdateStageInfo();
-            
+
             // mb lose game somewhere here C:
         }
     }
-    
+
     private void OnCollisionExit(Collision other)
     {
         if (UnityHelper.IsObjectInLayerMask(other.gameObject, layerMask))
@@ -80,11 +91,6 @@ public class PlatformRotator : MonoBehaviour
             _objectOnPlatform.Remove(other.gameObject);
             _totalWeightOfObjects -= other.gameObject.GetComponent<WeightInfo>()?.GetWeight ?? 0;
 
-            if (_totalWeightOfObjects < _currentWeightLimit && _currentStageNumber > 0)
-            {
-                --_currentStageNumber;
-                _currentWeightLimit = GetStageWeightLimit(_currentStageNumber);
-            }
 
             UpdateStageInfo();
         }
@@ -95,7 +101,7 @@ public class PlatformRotator : MonoBehaviour
         var weight = 0f;
         for (int i = 0; i <= stageNumber; i++)
         {
-            weight += platformStages[i].criticalWeightUntilProceedToNextStage ;
+            weight += platformStages[i].criticalWeightUntilProceedToNextStage;
         }
 
         return weight;
@@ -105,5 +111,10 @@ public class PlatformRotator : MonoBehaviour
     {
         currentWeight.text = $"{_totalWeightOfObjects}/{_currentWeightLimit}";
         currentStage.text = $"{_currentStageNumber + 1}/{platformStages.Count}";
+    }
+
+    IEnumerator RotateCoroutine(Vector3 rotationValue)
+    {
+        yield return transform.DORotate(rotationValue, rotateDuration, RotateMode.LocalAxisAdd).WaitForCompletion();
     }
 }

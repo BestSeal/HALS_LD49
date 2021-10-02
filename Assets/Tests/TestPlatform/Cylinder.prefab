@@ -90,7 +90,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6823071419899856671}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: a7cd963b838109043b1585216026362b, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -115,5 +115,6 @@ MonoBehaviour:
   platformStages:
   - {fileID: 11400000, guid: 0e6cfcede7b49954ab6120e7bb79f199, type: 2}
   - {fileID: 11400000, guid: ab7179259aef4d6488c52d9d42e57a0b, type: 2}
+  rotateDuration: 2
   currentWeight: {fileID: 0}
   currentStage: {fileID: 0}
