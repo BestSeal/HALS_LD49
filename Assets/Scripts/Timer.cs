@@ -17,6 +17,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         timertext.text = timestart.ToString();
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
