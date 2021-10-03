@@ -18,6 +18,8 @@ public class Timer : MonoBehaviour
     {
         timertext.text = timestart.ToString();
         Time.timeScale = 1f;
+        /*menu.SetActive(true);
+        menu.SetActive(false);*/
     }
 
     // Update is called once per frame

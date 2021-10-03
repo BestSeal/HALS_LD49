@@ -6,8 +6,15 @@ using UnityEngine.InputSystem;
 public class menu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
-    public GameObject pauseMenuUI;
+    [SerializeField] GameObject pauseMenuUI;
     [SerializeField] InputAction pausebutton;
+    [SerializeField] GameObject GameUI;
+
+    void Start()
+    {
+        pausebutton.Enable();
+        Resume();
+    }
 
     // Update is called once per frame
     void Update()
@@ -24,12 +31,14 @@ public class menu : MonoBehaviour
     public void Resume(){
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        GameIsPaused = true;
+        GameIsPaused = false;
+        GameUI.SetActive(true);
     }
     void Pause(){
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        GameUI.SetActive(false);
     }
 
     public void credits(){
