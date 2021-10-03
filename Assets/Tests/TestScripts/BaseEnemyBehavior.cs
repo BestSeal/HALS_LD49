@@ -11,29 +11,30 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(Rigidbody))]
 public class BaseEnemyBehavior : MonoBehaviour, IAttackable
 {
-    [SerializeField] private AnimationReferenceAsset moveAnimation;
-    [SerializeField] private AnimationReferenceAsset idleAnimation;
-    [SerializeField] private AnimationReferenceAsset fallAnimation;
-    [SerializeField] private AnimationReferenceAsset landAnimation;
-    [SerializeField] private AnimationReferenceAsset hitReceivedAnimation;
-    [SerializeField] private AnimationReferenceAsset deathAnimation;
-    [SerializeField] private LayerMask layersToCollideWith;
-    [SerializeField] private float roamingDelay = 5;
-    [SerializeField] private float roamingStartChance = 0.5f;
-    [SerializeField] private float movingSpeed = 1;
-    [SerializeField] private float roamingTime = 1;
+    [SerializeField] protected AnimationReferenceAsset moveAnimation;
+    [SerializeField] protected AnimationReferenceAsset idleAnimation;
+    [SerializeField] protected AnimationReferenceAsset fallAnimation;
+    [SerializeField] protected AnimationReferenceAsset landAnimation;
+    [SerializeField] protected AnimationReferenceAsset hitReceivedAnimation;
+    [SerializeField] protected AnimationReferenceAsset deathAnimation;
+    [SerializeField] protected LayerMask layersToCollideWith;
+    [SerializeField] protected float roamingDelay = 5;
+    [SerializeField] protected float roamingStartChance = 0.5f;
+    [SerializeField] protected float movingSpeed = 1;
+    [SerializeField] protected float roamingTime = 1;
 
     //private bool isNotLoopingAnimationFinished = true;
-    private SkeletonAnimation _skeletonAnimation;
-    private Collider _enemyCollider;
-    private Rigidbody _rigidbody;
+    protected SkeletonAnimation _skeletonAnimation;
+    protected Collider _enemyCollider;
+    protected Rigidbody _rigidbody;
 
-    private EnemyStateEnum _previousState;
-    private EnemyStateEnum _currentState;
-    private float roamMoveTimer = 0;
-    private float roamDelayTimer = 0;
-    private Vector3 _roamingDirection;
-    private Vector3 _initialScale;
+    protected EnemyStateEnum _previousState;
+    protected EnemyStateEnum _currentState;
+    protected float roamMoveTimer = 0;
+    protected float roamDelayTimer = 0;
+    protected Vector3 _roamingDirection;
+    protected Vector3 _initialScale;
+    protected bool _isDead;
 
     private void Awake()
     {
@@ -43,7 +44,7 @@ public class BaseEnemyBehavior : MonoBehaviour, IAttackable
         _initialScale = transform.localScale;
     }
 
-    private void Start()
+    protected void Start()
     {
         ChangeState(EnemyStateEnum.Falling);
     }
@@ -60,8 +61,9 @@ public class BaseEnemyBehavior : MonoBehaviour, IAttackable
     {
         roamDelayTimer += Time.deltaTime;
         //var state = 
-        if (_currentState == EnemyStateEnum.Idling && 
-            roamDelayTimer > roamingDelay)
+        if (_currentState == EnemyStateEnum.Idling &&
+            roamDelayTimer > roamingDelay &&
+            moveAnimation != null)
         {
             roamDelayTimer = 0;
             if (Random.Range(0f, 1f) < roamingStartChance)
@@ -70,17 +72,18 @@ public class BaseEnemyBehavior : MonoBehaviour, IAttackable
                 var x = Random.Range(-1f, 1f);
                 var z = Random.Range(-1f, 1f);
                 _roamingDirection = new Vector3(x, 0, z);
-                transform.localScale = new Vector3(_initialScale.x * (x > 0 ? 1 : -1), _initialScale.y, _initialScale.y);
+                transform.localScale =
+                    new Vector3(_initialScale.x * (x > 0 ? 1 : -1), _initialScale.y, _initialScale.y);
                 ChangeState(EnemyStateEnum.Moving);
             }
         }
-        
+
         if (_currentState == EnemyStateEnum.Moving)
         {
             if (roamMoveTimer < roamingTime)
             {
                 roamMoveTimer += Time.deltaTime;
-                _rigidbody.MovePosition(transform.position + _roamingDirection * movingSpeed * Time.deltaTime); 
+                _rigidbody.MovePosition(transform.position + _roamingDirection * movingSpeed * Time.deltaTime);
             }
             else
             {
@@ -89,7 +92,7 @@ public class BaseEnemyBehavior : MonoBehaviour, IAttackable
         }
     }
 
-    private void OnCollisionEnter(Collision other)
+    protected void OnCollisionEnter(Collision other)
     {
         if (UnityHelper.IsObjectInLayerMask(other.gameObject, layersToCollideWith) &&
             _currentState == EnemyStateEnum.Falling)
@@ -99,29 +102,41 @@ public class BaseEnemyBehavior : MonoBehaviour, IAttackable
     }
 
 
-    private void SetAnimation(AnimationReferenceAsset animationAsset, bool isLooping = true, float timeScale = 1f)
+    protected void SetAnimation(AnimationReferenceAsset animationAsset, bool isLooping = true, float timeScale = 1f)
     {
-        if (_skeletonAnimation.AnimationName == animationAsset.name)
+        if (animationAsset != null)
         {
-            return;
+            if (_skeletonAnimation.AnimationName == animationAsset.name)
+            {
+                return;
+            }
+
+            var animationEntry = _skeletonAnimation.state.SetAnimation(0, animationAsset, isLooping);
+            animationEntry.TimeScale = timeScale;
+            animationEntry.Complete += AnimationEntryOnComplete;
+            animationEntry.Complete += DeathCheck;
         }
-
-        //isNotLoopingAnimationFinished = isLooping;
-
-        var animationEntry = _skeletonAnimation.state.SetAnimation(0, animationAsset, isLooping);
-        animationEntry.TimeScale = timeScale;
-        animationEntry.Complete += AnimationEntryOnComplete;
     }
 
-    private void AnimationEntryOnComplete(TrackEntry trackEntry)
+    protected virtual void DeathCheck(TrackEntry trackentry)
     {
-        if (trackEntry.Animation.Name == landAnimation.name)
+        if (trackentry.Animation.Name == deathAnimation?.name)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+    protected void AnimationEntryOnComplete(TrackEntry trackEntry)
+    {
+        if (trackEntry.Animation.Name == landAnimation.name ||
+            trackEntry.Animation.Name == hitReceivedAnimation.name)
         {
             ChangeState(EnemyStateEnum.Idling);
         }
+
     }
 
-    private void ChangeState(EnemyStateEnum nextState)
+    protected void ChangeState(EnemyStateEnum nextState)
     {
         switch (nextState)
         {
@@ -131,8 +146,10 @@ public class BaseEnemyBehavior : MonoBehaviour, IAttackable
             case EnemyStateEnum.Spawned:
                 break;
             case EnemyStateEnum.Falling:
+                SetAnimation(fallAnimation);
                 break;
             case EnemyStateEnum.ReceivingHit:
+                SetAnimation(hitReceivedAnimation, false);
                 break;
             case EnemyStateEnum.Moving:
                 SetAnimation(moveAnimation);
@@ -143,6 +160,8 @@ public class BaseEnemyBehavior : MonoBehaviour, IAttackable
                 SetAnimation(idleAnimation);
                 break;
             case EnemyStateEnum.Death:
+                _isDead = true;
+                SetAnimation(deathAnimation, false);
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(nextState), nextState, null);
@@ -151,8 +170,9 @@ public class BaseEnemyBehavior : MonoBehaviour, IAttackable
         _currentState = nextState;
     }
 
-    public void ReceiveAttack(float attackDamage, Vector3 attackDirection, float attackForce)
+    public virtual void ReceiveAttack(float attackDamage, Vector3 attackDirection, float attackForce)
     {
+        ChangeState(EnemyStateEnum.ReceivingHit);
         _rigidbody.AddForce(attackDirection * attackForce, ForceMode.Impulse);
     }
 }

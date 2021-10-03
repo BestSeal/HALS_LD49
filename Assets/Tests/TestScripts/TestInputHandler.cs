@@ -49,6 +49,15 @@ namespace Tests.TestScripts
             _moveDirection = Vector3.right;
         }
 
+        private void Update()
+        {
+            if (hitAction.triggered)
+            {
+                SetAnimation(hitAnimation, false);
+                _notLoopingAnimationFinished = false;
+            }
+        }
+
         void FixedUpdate()
         {
             
@@ -65,15 +74,6 @@ namespace Tests.TestScripts
             {
                 SetAnimation(idleAnimation);
             }
-            
-            if (hitAction.triggered)
-            {
-                SetAnimation(hitAnimation, false);
-                _notLoopingAnimationFinished = false;
-                // rework on event
-                Attack();
-            }
-
         }
 
         private void SetAnimation(AnimationReferenceAsset animationAsset, bool loop = true, float timeScale = 1f)
@@ -85,6 +85,7 @@ namespace Tests.TestScripts
             var animationEntry = _skeletonAnimation.state.SetAnimation(0, animationAsset, loop);
             animationEntry.TimeScale = timeScale;
             animationEntry.Complete += AnimationEntryOnComplete;
+            animationEntry.Event += CustomEventFired;
         }
 
         private void AnimationEntryOnComplete(TrackEntry trackentry)
@@ -114,7 +115,7 @@ namespace Tests.TestScripts
 
         private void CustomEventFired(TrackEntry trackEntry, Spine.Event e)
         {
-            if (e.Data.Name == "atk")
+            if (e.Data.Name == "attack_event")
             {
                 Attack();
             }
@@ -125,7 +126,7 @@ namespace Tests.TestScripts
             var hittedEntites = Physics.OverlapSphere(attackZone.transform.position, attackRange, enemyLayer);
             foreach (var entity in hittedEntites)
             {
-                entity.GetComponent<BaseEnemyBehavior>()?.ReceiveAttack(attackDamage, _moveDirection + Vector3.up, attackForce);
+                entity.GetComponent<IAttackable>()?.ReceiveAttack(attackDamage, _moveDirection + Vector3.up, attackForce);
             }
         }
     }

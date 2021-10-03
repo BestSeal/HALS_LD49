@@ -3,10 +3,12 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private float baseChanse = 0.3f;
     [SerializeField] private float spawnDelay = 2;
     [SerializeField] private float levelTimer;
     [SerializeField] private GameObject enemy;
+    [SerializeField] private float baseEnemySpawnRate = 0.5f;
+    [SerializeField] private GameObject boss;
+    [SerializeField] private float bossSpawnRate = 0.1f;
 
     private Bounds _spawnBounds;
     private float _timeAfterLastSpawn;
@@ -22,15 +24,30 @@ public class EnemySpawner : MonoBehaviour
         _currentTime += Time.deltaTime;
         _timeAfterLastSpawn += Time.deltaTime;
         
-        if (Random.Range(0f, 1f) < baseChanse && _timeAfterLastSpawn >= spawnDelay)
+        if (_timeAfterLastSpawn >= spawnDelay)
         {
-            _timeAfterLastSpawn = 0;
-            var pos = GetRandomPosition(_spawnBounds.min, _spawnBounds.max);
-            Instantiate(enemy, pos, Quaternion.identity);
-            if (Random.Range(0f, 1f) < baseChanse / 2)
+            if (Random.Range(0f, 1f) < baseEnemySpawnRate)
             {
-                pos = GetRandomPosition(_spawnBounds.min, _spawnBounds.max);
-                Instantiate(enemy, pos, Quaternion.identity); 
+                _timeAfterLastSpawn = 0;
+                var pos = GetRandomPosition(_spawnBounds.min, _spawnBounds.max);
+                Instantiate(enemy, pos, Quaternion.identity);
+                if (Random.Range(0f, 1f) < baseEnemySpawnRate / 2)
+                {
+                    pos = GetRandomPosition(_spawnBounds.min, _spawnBounds.max);
+                    Instantiate(enemy, pos, Quaternion.identity); 
+                }
+                if (Random.Range(0f, 1f) < baseEnemySpawnRate / 4)
+                {
+                    pos = GetRandomPosition(_spawnBounds.min, _spawnBounds.max);
+                    Instantiate(enemy, pos, Quaternion.identity); 
+                }
+            }
+
+            if (Random.Range(0f, 1f) < bossSpawnRate)
+            {
+                _timeAfterLastSpawn = 0;
+                var pos = GetRandomPosition(_spawnBounds.min, _spawnBounds.max);
+                Instantiate(boss, pos, Quaternion.identity);
             }
         }
     }

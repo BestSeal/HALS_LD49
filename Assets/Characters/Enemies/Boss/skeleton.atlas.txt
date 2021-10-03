@@ -1,0 +1,216 @@
+
+skeleton.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Pic/Blast
+  rotate: false
+  xy: 105, 236
+  size: 38, 38
+  orig: 38, 38
+  offset: 0, 0
+  index: -1
+Pic/Boss_0000_Eues_2
+  rotate: true
+  xy: 371, 60
+  size: 29, 24
+  orig: 29, 24
+  offset: 0, 0
+  index: -1
+Pic/Boss_0001_Eues_1
+  rotate: true
+  xy: 262, 253
+  size: 47, 35
+  orig: 47, 35
+  offset: 0, 0
+  index: -1
+Pic/Boss_0002_Mouth
+  rotate: true
+  xy: 103, 55
+  size: 104, 39
+  orig: 104, 39
+  offset: 0, 0
+  index: -1
+Pic/Boss_0003_Body
+  rotate: false
+  xy: 2, 276
+  size: 141, 132
+  orig: 141, 132
+  offset: 0, 0
+  index: -1
+Pic/Boss_0003_Crown
+  rotate: false
+  xy: 145, 302
+  size: 152, 106
+  orig: 152, 106
+  offset: 0, 0
+  index: -1
+Pic/Ground_blast
+  rotate: true
+  xy: 144, 35
+  size: 69, 70
+  orig: 69, 70
+  offset: 0, 0
+  index: -1
+Pic/MFlash_00000
+  rotate: false
+  xy: 262, 214
+  size: 33, 37
+  orig: 33, 37
+  offset: 0, 0
+  index: -1
+Pic/MFlash_00001
+  rotate: false
+  xy: 262, 175
+  size: 33, 37
+  orig: 33, 37
+  offset: 0, 0
+  index: -1
+Pic/MFlash_00002
+  rotate: true
+  xy: 105, 161
+  size: 33, 37
+  orig: 33, 37
+  offset: 0, 0
+  index: -1
+Pic/MFlash_00003
+  rotate: true
+  xy: 103, 20
+  size: 33, 37
+  orig: 33, 37
+  offset: 0, 0
+  index: -1
+Pic/MuzzleFlash_0000_005
+  rotate: false
+  xy: 2, 17
+  size: 99, 77
+  orig: 99, 77
+  offset: 0, 0
+  index: -1
+Pic/MuzzleFlash_0001_004
+  rotate: true
+  xy: 416, 309
+  size: 99, 77
+  orig: 99, 77
+  offset: 0, 0
+  index: -1
+Pic/MuzzleFlash_0002_003
+  rotate: true
+  xy: 416, 208
+  size: 99, 77
+  orig: 99, 77
+  offset: 0, 0
+  index: -1
+Pic/MuzzleFlash_0003_002
+  rotate: false
+  xy: 2, 96
+  size: 99, 77
+  orig: 99, 77
+  offset: 0, 0
+  index: -1
+Pic/MuzzleFlash_0004_001
+  rotate: false
+  xy: 144, 106
+  size: 99, 77
+  orig: 99, 77
+  offset: 0, 0
+  index: -1
+Pic/Star_1
+  rotate: false
+  xy: 299, 293
+  size: 115, 115
+  orig: 115, 115
+  offset: 0, 0
+  index: -1
+Pic/Star_2
+  rotate: false
+  xy: 145, 185
+  size: 115, 115
+  orig: 115, 115
+  offset: 0, 0
+  index: -1
+Pic/Trail
+  rotate: true
+  xy: 495, 370
+  size: 38, 10
+  orig: 38, 10
+  offset: 0, 0
+  index: -1
+Pic/TrailRing
+  rotate: false
+  xy: 245, 110
+  size: 41, 63
+  orig: 41, 63
+  offset: 0, 0
+  index: -1
+Pic/bloob_0002_Layer-21
+  rotate: true
+  xy: 299, 192
+  size: 99, 101
+  orig: 99, 101
+  offset: 0, 0
+  index: -1
+Pic/bloob_0004_Layer-19
+  rotate: true
+  xy: 402, 107
+  size: 99, 101
+  orig: 99, 101
+  offset: 0, 0
+  index: -1
+Pic/bloob_0006_Layer-17
+  rotate: true
+  xy: 297, 91
+  size: 99, 101
+  orig: 99, 101
+  offset: 0, 0
+  index: -1
+Pic/bloob_0009_Layer-14
+  rotate: true
+  xy: 400, 6
+  size: 99, 101
+  orig: 99, 101
+  offset: 0, 0
+  index: -1
+Pic/bloob_0011_Layer-12
+  rotate: true
+  xy: 2, 175
+  size: 99, 101
+  orig: 99, 101
+  offset: 0, 0
+  index: -1
+Pic/dirt
+  rotate: false
+  xy: 105, 196
+  size: 38, 38
+  orig: 38, 38
+  offset: 0, 0
+  index: -1
+Pic/dust_trails
+  rotate: false
+  xy: 245, 63
+  size: 45, 45
+  orig: 45, 45
+  offset: 0, 0
+  index: -1
+Pic/gradient
+  rotate: false
+  xy: 216, 2
+  size: 63, 59
+  orig: 63, 59
+  offset: 0, 0
+  index: -1
+Pic/shadow
+  rotate: true
+  xy: 495, 338
+  size: 30, 12
+  orig: 30, 12
+  offset: 0, 0
+  index: -1
+Pic/smokeWhite
+  rotate: false
+  xy: 292, 12
+  size: 77, 77
+  orig: 77, 77
+  offset: 0, 0
+  index: -1

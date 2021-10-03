@@ -31,8 +31,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1990052524960409824}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 2.31, z: 2.46}
-  m_LocalScale: {x: 0.15256, y: 0.15256, z: 0.15256}
+  m_LocalPosition: {x: -0.48185, y: 2.0436, z: 2.46}
+  m_LocalScale: {x: 0.29757437, y: 0.29757437, z: 0.29757437}
   m_Children:
   - {fileID: 3065957229214219848}
   m_Father: {fileID: 0}
@@ -168,10 +168,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54e9cba61371ca48bfe7f50f9c4d037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveAnimation: {fileID: 11400000, guid: 1d8312fdb04f2154ab01c32b49f23b73, type: 2}
+  moveAnimation: {fileID: 11400000, guid: b8f9e48933a8e2448a94652ffe28c56f, type: 2}
   idleAnimation: {fileID: 11400000, guid: 1d8312fdb04f2154ab01c32b49f23b73, type: 2}
   pushAnimation: {fileID: 11400000, guid: 69af9d5a65fac744baf992eea057eacd, type: 2}
-  hitAnimation: {fileID: 11400000, guid: a6f245c38905c1d4ab437c36749b524e, type: 2}
+  hitAnimation: {fileID: 11400000, guid: 1ea96481263e7fd47a157a11e7ebd66b, type: 2}
   moveInput:
     m_Name: Move Input
     m_Type: 0
@@ -236,11 +236,11 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Hit
       m_Flags: 0
-  moveSpeed: 3
-  attackRange: 3
+  moveSpeed: 4
+  attackRange: 1.5
   attackDelay: 1
-  attackForce: 3
-  attackDamage: 3
+  attackForce: 2
+  attackDamage: 2
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e962456453f25b4bafc91410436fc02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 2
+  weight: 5
 --- !u!1 &5192766202566062390
 GameObject:
   m_ObjectHideFlags: 0

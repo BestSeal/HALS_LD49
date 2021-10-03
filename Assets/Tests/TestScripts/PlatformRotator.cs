@@ -114,6 +114,6 @@ public class PlatformRotator : MonoBehaviour
 
     IEnumerator RotateCoroutine(Vector3 rotationValue)
     {
-        yield return transform.DORotate(rotationValue, rotateDuration, RotateMode.LocalAxisAdd).WaitForCompletion();
+        yield return transform.DORotate(rotationValue, rotateDuration, RotateMode.WorldAxisAdd).WaitForCompletion();
     }
 }
