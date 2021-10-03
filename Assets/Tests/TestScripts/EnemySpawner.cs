@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Collider))]
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private float baseChanse = 0.3f;
@@ -13,7 +14,6 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        // possible null ref C:
         _spawnBounds = GetComponent<Collider>().bounds;
     }
 
@@ -22,12 +22,12 @@ public class EnemySpawner : MonoBehaviour
         _currentTime += Time.deltaTime;
         _timeAfterLastSpawn += Time.deltaTime;
         
-        if (Random.Range(0, 1) < baseChanse && _timeAfterLastSpawn >= spawnDelay)
+        if (Random.Range(0f, 1f) < baseChanse && _timeAfterLastSpawn >= spawnDelay)
         {
             _timeAfterLastSpawn = 0;
             var pos = GetRandomPosition(_spawnBounds.min, _spawnBounds.max);
             Instantiate(enemy, pos, Quaternion.identity);
-            if (Random.Range(0, 1) < _currentTime / levelTimer)
+            if (Random.Range(0f, 1f) < baseChanse / 2)
             {
                 pos = GetRandomPosition(_spawnBounds.min, _spawnBounds.max);
                 Instantiate(enemy, pos, Quaternion.identity); 

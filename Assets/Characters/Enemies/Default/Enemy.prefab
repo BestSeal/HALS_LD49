@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3284729917850867588}
   - component: {fileID: 55762021614562903}
   - component: {fileID: 6541590959024262811}
+  - component: {fileID: 6932406442319678906}
   m_Layer: 3
   m_Name: Enemy
   m_TagString: Untagged
@@ -123,7 +124,7 @@ MonoBehaviour:
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
   _animationName: 
-  loop: 1
+  loop: 0
   timeScale: 1
 --- !u!54 &3284729917850867589
 Rigidbody:
@@ -181,3 +182,28 @@ CapsuleCollider:
   m_Height: 4.12
   m_Direction: 1
   m_Center: {x: -0.25, y: 1.06, z: 0.16}
+--- !u!114 &6932406442319678906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3284729917850867591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb099642ad4b794c9399793bac75759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveAnimation: {fileID: 11400000, guid: 72e922c4d9cd752428be85589d64663b, type: 2}
+  idleAnimation: {fileID: 11400000, guid: 8b2d795c953f4904ea93aab271860cca, type: 2}
+  fallAnimation: {fileID: 11400000, guid: 9319f4ac8e03f564290667342b00fd90, type: 2}
+  landAnimation: {fileID: 11400000, guid: 51ce03cf446b3df409c3e88bc38ee86d, type: 2}
+  hitReceivedAnimation: {fileID: 11400000, guid: 1ea96481263e7fd47a157a11e7ebd66b, type: 2}
+  deathAnimation: {fileID: 0}
+  layersToCollideWith:
+    serializedVersion: 2
+    m_Bits: 192
+  roamingDelay: 3
+  roamingStartChance: 0.5
+  movingSpeed: 1
+  roamingTime: 1
