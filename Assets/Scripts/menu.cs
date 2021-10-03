@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class menu : MonoBehaviour
 {
-    public static bool GameIsPaused = true;
+    public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    [SerializeField] InputAction pausebutton;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (pausebutton.triggered)
         {
             if (GameIsPaused)
                 Resume();

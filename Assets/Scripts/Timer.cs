@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    //[SerializeField] sceneManger script;
+    [SerializeField] GameObject UI;
+    [SerializeField] GameObject menu;
+    [SerializeField] GameObject end;
     GameObject gameobject;
-    public float timestart = 60;
-    public Text timertext;
+    [SerializeField] float timestart = 60;
+    [SerializeField] TextMeshProUGUI timertext;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +24,11 @@ public class Timer : MonoBehaviour
     {
         timestart -= Time.deltaTime;
         timertext.text = Mathf.Round(timestart).ToString();
+        if (timertext.text == "0"){
+            Time.timeScale = 0f;
+            menu.SetActive(false);
+            UI.SetActive(false);
+            end.SetActive(true);
+        }
     }
 }
