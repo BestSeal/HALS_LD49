@@ -271,10 +271,22 @@ PrefabInstance:
       propertyPath: m_text
       value: Play
       objectReference: {fileID: 0}
+    - target: {fileID: 3243090359746781032, guid: e07e2adc50004ee41be36525a9e44baf, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 05f5c28d3fbd13d40be04d4f0046f0e4, type: 2}
+    - target: {fileID: 3243090359746781032, guid: e07e2adc50004ee41be36525a9e44baf, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8485522591653804730, guid: 05f5c28d3fbd13d40be04d4f0046f0e4, type: 2}
     - target: {fileID: 3249363086790645948, guid: e07e2adc50004ee41be36525a9e44baf, type: 3}
       propertyPath: m_Name
       value: Button
       objectReference: {fileID: 0}
+    - target: {fileID: 5467881187677304305, guid: e07e2adc50004ee41be36525a9e44baf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: eb5e6b83e185f404ab6b65ca54e7f22d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e07e2adc50004ee41be36525a9e44baf, type: 3}
 --- !u!224 &4481572812320961665 stripped
