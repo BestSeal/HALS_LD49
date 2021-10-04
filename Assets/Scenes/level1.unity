@@ -741,6 +741,22 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1802892878296629108, guid: 44acd7b519c03f649b8fead6f53ec954, type: 3}
+      propertyPath: platformStages.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1802892878296629108, guid: 44acd7b519c03f649b8fead6f53ec954, type: 3}
+      propertyPath: platformStages.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: e148710970512e34cac02a682e688e89, type: 2}
+    - target: {fileID: 1802892878296629108, guid: 44acd7b519c03f649b8fead6f53ec954, type: 3}
+      propertyPath: platformStages.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 56529462eafd62e42854ac9f19b5586f, type: 2}
+    - target: {fileID: 1802892878296629108, guid: 44acd7b519c03f649b8fead6f53ec954, type: 3}
+      propertyPath: platformStages.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2c0f3d61b2ed7694a9c0a7c9fe616a70, type: 2}
+    - target: {fileID: 1802892878296629108, guid: 44acd7b519c03f649b8fead6f53ec954, type: 3}
       propertyPath: timeUpEvent.m_PersistentCalls.m_Calls.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -916,6 +932,18 @@ PrefabInstance:
     - target: {fileID: 7981454236024764327, guid: d15dd6ff75c7d874190740d3d74b269f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7981454237378271713, guid: d15dd6ff75c7d874190740d3d74b269f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 13.6671915
+      objectReference: {fileID: 0}
+    - target: {fileID: 7981454237378271713, guid: d15dd6ff75c7d874190740d3d74b269f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7981454237378271741, guid: d15dd6ff75c7d874190740d3d74b269f, type: 3}
+      propertyPath: spawnDelay
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d15dd6ff75c7d874190740d3d74b269f, type: 3}
