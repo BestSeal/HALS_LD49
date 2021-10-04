@@ -78,14 +78,17 @@ namespace Tests.TestScripts
 
         private void SetAnimation(AnimationReferenceAsset animationAsset, bool loop = true, float timeScale = 1f)
         {
-            if (_skeletonAnimation.AnimationName == animationAsset.name || !_notLoopingAnimationFinished ||_isPushing)
+            if (animationAsset != null)
             {
-                return;
+                if (_skeletonAnimation.AnimationName == animationAsset.name || !_notLoopingAnimationFinished ||_isPushing)
+                {
+                    return;
+                }
+                var animationEntry = _skeletonAnimation.state.SetAnimation(0, animationAsset, loop);
+                animationEntry.TimeScale = timeScale;
+                animationEntry.Complete += AnimationEntryOnComplete;
+                animationEntry.Event += CustomEventFired;
             }
-            var animationEntry = _skeletonAnimation.state.SetAnimation(0, animationAsset, loop);
-            animationEntry.TimeScale = timeScale;
-            animationEntry.Complete += AnimationEntryOnComplete;
-            animationEntry.Event += CustomEventFired;
         }
 
         private void AnimationEntryOnComplete(TrackEntry trackentry)
