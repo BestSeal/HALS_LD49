@@ -193,7 +193,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnDelay: 3
   levelTimer: 300
-  enemy: {fileID: 5612456243450534785, guid: 15d07ea8096cd674d83e7b846db2ce61, type: 3}
+  enemy:
+  - {fileID: 5612456243450534785, guid: 15d07ea8096cd674d83e7b846db2ce61, type: 3}
+  - {fileID: 5612456243450534785, guid: ea345eb464d169e43bdf49479ef1ce7e, type: 3}
+  - {fileID: 5612456243450534785, guid: 855131200be938e4e92310b9d50d4519, type: 3}
   baseEnemySpawnRate: 0.5
   boss: {fileID: 8814162411487132922, guid: eed61821943028d4b8f584fe449d61e3, type: 3}
   bossSpawnRate: 0.1

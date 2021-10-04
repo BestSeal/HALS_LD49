@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
@@ -5,7 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private float spawnDelay = 2;
     [SerializeField] private float levelTimer;
-    [SerializeField] private GameObject enemy;
+    [SerializeField] private List<GameObject> enemy;
     [SerializeField] private float baseEnemySpawnRate = 0.5f;
     [SerializeField] private GameObject boss;
     [SerializeField] private float bossSpawnRate = 0.1f;
@@ -30,16 +31,16 @@ public class EnemySpawner : MonoBehaviour
             {
                 _timeAfterLastSpawn = 0;
                 var pos = GetRandomPosition(_spawnBounds.min, _spawnBounds.max);
-                Instantiate(enemy, pos, Quaternion.identity);
+                Instantiate(GetRandomEnemy(), pos, Quaternion.identity);
                 if (Random.Range(0f, 1f) < baseEnemySpawnRate / 2)
                 {
                     pos = GetRandomPosition(_spawnBounds.min, _spawnBounds.max);
-                    Instantiate(enemy, pos, Quaternion.identity); 
+                    Instantiate(GetRandomEnemy(), pos, Quaternion.identity); 
                 }
                 if (Random.Range(0f, 1f) < baseEnemySpawnRate / 4)
                 {
                     pos = GetRandomPosition(_spawnBounds.min, _spawnBounds.max);
-                    Instantiate(enemy, pos, Quaternion.identity); 
+                    Instantiate(GetRandomEnemy(), pos, Quaternion.identity); 
                 }
             }
 
@@ -56,6 +57,9 @@ public class EnemySpawner : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    private GameObject GetRandomEnemy()
+        => enemy[Random.Range(0, enemy.Count)];
     
     private Vector3 GetRandomPosition(Vector3 min, Vector3 max)
         => new Vector3(
