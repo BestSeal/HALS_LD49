@@ -132,5 +132,11 @@ namespace Tests.TestScripts
                 entity.GetComponent<IAttackable>()?.ReceiveAttack(attackDamage, _moveDirection + Vector3.up, attackForce);
             }
         }
+
+        public void DisableInput()
+        {
+            moveInput.Disable();
+            hitAction.Disable();
+        }
     }
 }

@@ -1,49 +1,66 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using DG.Tweening;
 using Tests;
 using Tests.TestPlatformSettings;
 using Tests.TestScripts;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PlatformRotator : MonoBehaviour
 {
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private List<PlatformStage> platformStages;
     [SerializeField] private float rotateDuration = 2;
-
-    //!FOR TEST ONLY!
-    [SerializeField] private TextMeshProUGUI currentWeight;
-    [SerializeField] private TextMeshProUGUI currentStage;
-
+    [SerializeField] private int startTimerValue;
+    [SerializeField] private Slider weightSlider;
+    [SerializeField] private TextMeshProUGUI timer;
+    [SerializeField] private UnityEvent timeUpEvent;
+    
     private float _totalWeightOfObjects = 0;
     private int _objectsOnPlatform = 0;
     private int _objectsOnRightSide = 0;
     private Quaternion _initialRotation;
     private Collider _collider;
+    private Rigidbody _rigidbody;
     private List<GameObject> _objectOnPlatform;
     private int _currentStageNumber = 0;
     private float _currentWeightLimit = 0;
-    private float enemiesCheckTimer;
+    private float _enemiesCheckTimer;
+    private float _currentTimerValue;
 
     void Start()
     {
         _objectOnPlatform = new List<GameObject>();
         _collider = GetComponent<Collider>();
+        _rigidbody = GetComponent<Rigidbody>();
         _initialRotation = transform.rotation;
         _currentWeightLimit = GetStageWeightLimit(_currentStageNumber);
+        weightSlider.maxValue = GetStageWeightLimit(platformStages.Count - 1);
+        weightSlider.value = 0;
+        _currentTimerValue = startTimerValue;
         UpdateStageInfo();
+        
     }
 
     private void Update()
     {
-        enemiesCheckTimer += Time.deltaTime;
+        _currentTimerValue -= Time.deltaTime;
+        if (_currentTimerValue <= 0)
+        {
+            timeUpEvent.Invoke();
+        }
+        timer.text = (_currentTimerValue > 0 ? (int)_currentTimerValue : 0).ToString(CultureInfo.InvariantCulture);
+        _enemiesCheckTimer += Time.deltaTime;
     }
 
     private void OnCollisionStay(Collision other)
     {
-        if (enemiesCheckTimer > rotateDuration)
+        if (_enemiesCheckTimer > rotateDuration)
         {
             if (_currentWeightLimit <= _totalWeightOfObjects)
             {
@@ -66,7 +83,7 @@ public class PlatformRotator : MonoBehaviour
                 _currentWeightLimit = GetStageWeightLimit(_currentStageNumber);
             }
 
-            enemiesCheckTimer = 0;
+            _enemiesCheckTimer = 0;
         }
     }
 
@@ -78,8 +95,12 @@ public class PlatformRotator : MonoBehaviour
             _totalWeightOfObjects += other.gameObject.GetComponent<WeightInfo>()?.GetWeight ?? 0;
 
             UpdateStageInfo();
-
-            // mb lose game somewhere here C:
+            
+            if (_totalWeightOfObjects >= GetStageWeightLimit(platformStages.Count - 1) && _rigidbody.isKinematic)
+            {
+                _rigidbody.isKinematic = false;
+                _rigidbody.useGravity = true;
+            }
         }
     }
 
@@ -108,10 +129,15 @@ public class PlatformRotator : MonoBehaviour
 
     private void UpdateStageInfo()
     {
-        currentWeight.text = $"{_totalWeightOfObjects}/{_currentWeightLimit}";
-        currentStage.text = $"{_currentStageNumber + 1}/{platformStages.Count}";
+        weightSlider.value = _totalWeightOfObjects;
     }
 
+    public float GetCurrentWeightOnPlatform()
+        => _totalWeightOfObjects;
+
+    public float GetCurrentTimerValue()
+        => _currentTimerValue;
+    
     IEnumerator RotateCoroutine(Vector3 rotationValue)
     {
         yield return transform.DORotate(rotationValue, rotateDuration, RotateMode.WorldAxisAdd).WaitForCompletion();

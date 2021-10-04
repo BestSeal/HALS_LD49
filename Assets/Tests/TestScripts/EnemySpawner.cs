@@ -52,6 +52,11 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    public void DeactivateSpawner()
+    {
+        gameObject.SetActive(false);
+    }
+    
     private Vector3 GetRandomPosition(Vector3 min, Vector3 max)
         => new Vector3(
             Random.Range(min.x, max.x),
