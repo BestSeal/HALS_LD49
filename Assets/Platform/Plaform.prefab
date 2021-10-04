@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802892878296629105}
-  m_LocalRotation: {x: -0, y: -0.8228899, z: -0, w: 0.5682009}
+  m_LocalRotation: {x: 0, y: -0.82288855, z: 0, w: 0.5682029}
   m_LocalPosition: {x: 0.59147, y: 2.0803, z: 6.26}
   m_LocalScale: {x: 0.25644362, y: 0.25644362, z: 0.25644362}
   m_Children: []
@@ -102,20 +102,47 @@ MonoBehaviour:
   platformStages:
   - {fileID: 11400000, guid: 0e6cfcede7b49954ab6120e7bb79f199, type: 2}
   - {fileID: 11400000, guid: ab7179259aef4d6488c52d9d42e57a0b, type: 2}
+  - {fileID: 11400000, guid: e148710970512e34cac02a682e688e89, type: 2}
+  - {fileID: 11400000, guid: 56529462eafd62e42854ac9f19b5586f, type: 2}
+  - {fileID: 11400000, guid: 2c0f3d61b2ed7694a9c0a7c9fe616a70, type: 2}
   rotateDuration: 2
-  startTimerValue: 60
+  startTimerValue: 30
   weightSlider: {fileID: 0}
   timer: {fileID: 0}
   timeUpEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+        m_TargetAssemblyTypeName: EnemySpawner, Assembly-CSharp
+        m_MethodName: DeactivateSpawner
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Tests.TestScripts.TestInputHandler, Assembly-CSharp
+        m_MethodName: DisableInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayMenu, Assembly-CSharp
+        m_MethodName: TimeUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

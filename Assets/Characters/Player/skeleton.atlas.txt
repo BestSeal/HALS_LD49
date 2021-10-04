@@ -1,103 +1,138 @@
 
 skeleton.png
-size: 1024,128
+size: 1024,256
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 Pic/Foot_1
-  rotate: false
-  xy: 73, 4
+  rotate: true
+  xy: 358, 122
   size: 31, 17
   orig: 31, 17
   offset: 0, 0
   index: -1
 Pic/Foot_2
-  rotate: false
-  xy: 2, 2
+  rotate: true
+  xy: 337, 116
   size: 37, 19
   orig: 37, 19
   offset: 0, 0
   index: -1
 Pic/MuzzleFlash_0000_005
   rotate: true
-  xy: 318, 23
+  xy: 441, 54
   size: 99, 77
   orig: 99, 77
   offset: 0, 0
   index: -1
 Pic/MuzzleFlash_0001_004
-  rotate: true
-  xy: 2, 23
+  rotate: false
+  xy: 143, 11
   size: 99, 77
   orig: 99, 77
   offset: 0, 0
   index: -1
 Pic/MuzzleFlash_0002_003
-  rotate: true
-  xy: 81, 23
+  rotate: false
+  xy: 244, 11
   size: 99, 77
   orig: 99, 77
   offset: 0, 0
   index: -1
 Pic/MuzzleFlash_0003_002
   rotate: true
-  xy: 160, 23
+  xy: 298, 155
   size: 99, 77
   orig: 99, 77
   offset: 0, 0
   index: -1
 Pic/MuzzleFlash_0004_001
   rotate: true
-  xy: 239, 23
+  xy: 377, 155
   size: 99, 77
   orig: 99, 77
   offset: 0, 0
   index: -1
+Pic/Phone_1
+  rotate: false
+  xy: 456, 177
+  size: 77, 77
+  orig: 77, 77
+  offset: 0, 0
+  index: -1
+Pic/Phone_2
+  rotate: false
+  xy: 63, 5
+  size: 78, 78
+  orig: 78, 78
+  offset: 0, 0
+  index: -1
+Pic/RockPunk
+  rotate: true
+  xy: 2, 67
+  size: 187, 44
+  orig: 187, 44
+  offset: 0, 0
+  index: -1
+Pic/Sph_1
+  rotate: true
+  xy: 142, 90
+  size: 164, 154
+  orig: 164, 154
+  offset: 0, 0
+  index: -1
+Pic/Sph_2
+  rotate: true
+  xy: 48, 85
+  size: 169, 92
+  orig: 169, 92
+  offset: 0, 0
+  index: -1
 Pic/Trail
   rotate: false
-  xy: 198, 11
+  xy: 330, 94
   size: 38, 10
   orig: 38, 10
   offset: 0, 0
   index: -1
 Pic/TrailRing
   rotate: false
-  xy: 489, 59
+  xy: 2, 2
   size: 41, 63
   orig: 41, 63
   offset: 0, 0
   index: -1
 Pic/Untitled-1_0000_Mouth
-  rotate: false
-  xy: 106, 5
+  rotate: true
+  xy: 45, 7
   size: 58, 16
   orig: 58, 16
   offset: 0, 0
   index: -1
 Pic/Untitled-1_0001_Eues_2
   rotate: false
-  xy: 41, 2
+  xy: 370, 101
   size: 30, 19
   orig: 30, 19
   offset: 0, 0
   index: -1
 Pic/Untitled-1_0002_Eues_1
   rotate: true
-  xy: 489, 10
+  xy: 298, 106
   size: 47, 37
   orig: 47, 37
   offset: 0, 0
   index: -1
 Pic/Untitled-1_0003_Body
-  rotate: false
-  xy: 397, 28
+  rotate: true
+  xy: 345, 2
   size: 90, 94
   orig: 90, 94
   offset: 0, 0
   index: -1
 Pic/shadow
   rotate: false
-  xy: 166, 9
+  xy: 298, 92
   size: 30, 12
   orig: 30, 12
   offset: 0, 0
