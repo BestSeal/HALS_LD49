@@ -5,10 +5,9 @@ public class sceneManger : MonoBehaviour
 {
     public static int currentSceneNumber;
 
-    public void NextLevel (int _levelNumber)
+    public void NextLevel ()
     {
-        currentSceneNumber = _levelNumber;
-        SceneManager.LoadScene( _levelNumber);
+        SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex + 1);
     }
     
     public void Restart ()

@@ -6,7 +6,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"C:/dev/unity/Course/LD/Builds/LD49/v0.0.1;;;;;;;;;\"}"
+                "value": "{\"m_Value\":\"C:/dev/unity/Course/LD/Builds/LD49/LD_final_web;C:/dev/unity/Course/LD/Builds/LD49/v0.0.7;C:/dev/unity/Course/LD/Builds/LD49/final_ld;C:/dev/unity/Course/LD/Builds/LD49/v.0.0.6;C:/dev/unity/Course/LD/Builds/LD49/v0.0.5;C:/dev/unity/Course/LD/Builds/LD49/v0.0.4;C:/dev/unity/Course/LD/Builds/LD49/v.0.0.3;C:/dev/unity/Course/LD/Builds/LD49/v0.0.2;C:/dev/unity/Course/LD/Builds/LD49/v0.0.1;\"}"
             }
         ]
     }
