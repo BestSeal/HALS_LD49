@@ -4,6 +4,7 @@ using Spine.Unity;
 using Tests;
 using Tests.TestScripts;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(SkeletonAnimation))]
@@ -11,12 +12,19 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(Rigidbody))]
 public class BaseEnemyBehavior : MonoBehaviour, IAttackable
 {
+    [SerializeField] protected AudioSource audioSource;
+    [SerializeField] protected float baseVolume = 0.1f;
+    [SerializeField] protected AudioClip deathAudioClip;
+    [SerializeField] protected AudioClip hitReceivedAudioClip;
+    [SerializeField] protected AudioClip landAudioClip;
+    
     [SerializeField] protected AnimationReferenceAsset moveAnimation;
     [SerializeField] protected AnimationReferenceAsset idleAnimation;
     [SerializeField] protected AnimationReferenceAsset fallAnimation;
     [SerializeField] protected AnimationReferenceAsset landAnimation;
     [SerializeField] protected AnimationReferenceAsset hitReceivedAnimation;
     [SerializeField] protected AnimationReferenceAsset deathAnimation;
+    
     [SerializeField] protected LayerMask layersToCollideWith;
     [SerializeField] protected float roamingDelay = 5;
     [SerializeField] protected float roamingStartChance = 0.5f;
@@ -141,6 +149,7 @@ public class BaseEnemyBehavior : MonoBehaviour, IAttackable
         switch (nextState)
         {
             case EnemyStateEnum.Landed:
+                audioSource.PlayOneShot(landAudioClip, baseVolume);
                 SetAnimation(landAnimation, false);
                 break;
             case EnemyStateEnum.Spawned:
@@ -149,6 +158,7 @@ public class BaseEnemyBehavior : MonoBehaviour, IAttackable
                 SetAnimation(fallAnimation);
                 break;
             case EnemyStateEnum.ReceivingHit:
+                audioSource.PlayOneShot(hitReceivedAudioClip, baseVolume);
                 SetAnimation(hitReceivedAnimation, false);
                 break;
             case EnemyStateEnum.Moving:
@@ -161,6 +171,7 @@ public class BaseEnemyBehavior : MonoBehaviour, IAttackable
                 break;
             case EnemyStateEnum.Death:
                 _isDead = true;
+                audioSource.PlayOneShot(deathAudioClip, baseVolume);
                 SetAnimation(deathAnimation, false);
                 break;
             default:

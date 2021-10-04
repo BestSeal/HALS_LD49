@@ -1,18 +1,21 @@
-using System;
 using Spine;
 using Spine.Unity;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Event = UnityEngine.Event;
 
 namespace Tests.TestScripts
 {
     public class TestInputHandler : MonoBehaviour
     {
+        [SerializeField] private AudioSource audioSource;
+        [SerializeField] private float baseVolume = 0.2f;
+        
         [SerializeField] private AnimationReferenceAsset moveAnimation;
         [SerializeField] private AnimationReferenceAsset idleAnimation;
         [SerializeField] private AnimationReferenceAsset pushAnimation;
         [SerializeField] private AnimationReferenceAsset hitAnimation;
+        [SerializeField] private AudioClip hitSound;
+        
 
         [SerializeField] private InputAction moveInput;
         [SerializeField] private InputAction hitAction;
@@ -127,6 +130,7 @@ namespace Tests.TestScripts
         private void Attack()
         {
             var hittedEntites = Physics.OverlapSphere(attackZone.transform.position, attackRange, enemyLayer);
+            audioSource.PlayOneShot(hitSound, baseVolume);
             foreach (var entity in hittedEntites)
             {
                 entity.GetComponent<IAttackable>()?.ReceiveAttack(attackDamage, _moveDirection + Vector3.up, attackForce);
